@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as 'builder'
-FROM registry.redhat.com/rhscl/nodejs-4-rhel7 as builder
+FROM registry.redhat.io/rhscl/nodejs-4-rhel7 as builder
 
 COPY package*.json ./
 
@@ -21,7 +21,7 @@ RUN npm run build:dynamic
 
 ### STAGE 2: Setup ###
 
-FROM registry.redhat.com/rhscl/nodejs-4-rhel7
+FROM registry.redhat.io/rhscl/nodejs-4-rhel7
 
 ## Install http-server
 #RUN npm install http-server -g
