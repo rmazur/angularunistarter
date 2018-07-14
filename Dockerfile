@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as 'builder'
-FROM my-nodejs8 as builder
+FROM rhoar-nodejs/nodejs-8 as builder
 
 COPY package*.json ./
 
@@ -21,7 +21,7 @@ RUN npm run build:dynamic
 
 ### STAGE 2: Setup ###
 
-FROM my-nodejs8
+FROM rhoar-nodejs/nodejs-8
 
 ## Install http-server
 #RUN npm install http-server -g
