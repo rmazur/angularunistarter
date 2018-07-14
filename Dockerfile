@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as 'builder'
-FROM node:8.11.3-alpine as builder
+FROM nodejs-8-rhel7 as builder
 
 COPY package*.json ./
 
@@ -21,7 +21,7 @@ RUN npm run build:dynamic
 
 ### STAGE 2: Setup ###
 
-FROM node:8.11.3-alpine
+FROM nodejs-8-rhel7
 
 ## Install http-server
 #RUN npm install http-server -g
