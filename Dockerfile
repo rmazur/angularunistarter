@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as 'builder'
-FROM bucharestgold/centos7-s2i-nodejs:latest as builder
+FROM docker.io/centos/nodejs-8-centos7:latest as builder
 
 COPY package*.json ./
 
@@ -21,7 +21,7 @@ RUN npm run build:dynamic
 
 ### STAGE 2: Setup ###
 
-FROM bucharestgold/centos7-s2i-nodejs:latest
+FROM docker.io/centos/nodejs-8-centos7:latest
 
 ## Install http-server
 #RUN npm install http-server -g
